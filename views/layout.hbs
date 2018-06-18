@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Uncommon Joe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left">Uncommon Joe</a>
+          <ul class="right">
+            <li><a href="/tweet/new">+user</a></li>
+            <li><a href="/user/">Profile</a></li>
+            <li><a href="/user/logout">Log Out</a></li>
+
+            <li><a href="/user/login">Log In</a></li>
+            <li><a href="/user/sign-up">Sign Up</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      {{{ body }}}
+    </main>
+  </body>
+</html>

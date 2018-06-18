@@ -4,7 +4,7 @@
   "description": "good standards of documentation (i.e. explanations of the technologies used, the approach taken, features, installation instructions, unsolved problems, etc.)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,13 +18,19 @@
   "homepage": "https://github.com/isaberg/uncommon-joe#readme",
   "dependencies": {
     "bcrypt": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
+    "chai": "^4.1.2",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "hbs": "^4.0.1",
+    "mocha": "^5.2.0",
+    "moment": "^2.22.2",
     "mongodb": "^3.0.10",
     "mongoose": "^5.1.5",
     "npm": "^6.1.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "supertest": "^3.1.0"
   }
 }
