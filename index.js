@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const hbs = require('hbs')
 const bcrypt = require('bcrypt-nodejs')
-const favicon = require('serve-favicon')
 const mongodb = require('mongodb')
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
@@ -23,7 +22,12 @@ app.use(express.static('public'))
 app.use(require("./routes/index.js"));
 
 app.set('view engine', 'hbs')
-app.set('port', process.env.PORT || 4000)
+
+app.set('port', process.env.PORT || 3001)
+
+app.listen(app.get('port'), () => {
+  console.log(`✅ Heroku PORT: ${app.get('port')} 🌟`)
+})
 
 app.listen(4000, () => {
   console.log("success: index.js of Joe app listening on port 4000")
