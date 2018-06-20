@@ -1,30 +1,119 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Uncommon Joe</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="/public/css/style.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav>
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo left">Uncommon Joe</a>
-          <ul class="right">
-            <li><a href="/tweet/new">+user</a></li>
-            <li><a href="/user/">Profile</a></li>
-            <li><a href="/user/logout">Log Out</a></li>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Uncommon Joe</title>
 
-            <li><a href="/user/login">Log In</a></li>
-            <li><a href="/user/sign-up">Sign Up</a></li>
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo"> <img style="height:55px;width:55px;padding:5px" src="coffee.png"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">User</a></li>
+        <li><a href="#">Org</a></li>
+        <li><a href="#">Message</a></li>
+        <li><a href="#">Match</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Uncommon Joe</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Connect across your large organization over coffee.</h5>
+        </div>
+        <div class="row center">
+          <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Join now!</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Organizations</h5>
+            <p class="light">Want your employees or members to connect across difference? Register your organization for Uncommon Coffee.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Match</h5>
+            <p class="light">Check out your matches, or see all the connections that Uncommon Joe has made!</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Messages</h5>
+            <p class="light">Once you match, coordinate for coffee using the messages feature!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">We are connecting people across their organization, one cup of Uncommon Joe at a time.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About</h5>
+          <p class="grey-text text-lighten-4">Uncommon Joe was created by Isaiah Berg.</p>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="white-text" href="#!">User</a></li>
+            <li><a class="white-text" href="#!">Org</a></li>
+            <li><a class="white-text" href="#!">Message</a></li>
+            <li><a class="white-text" href="#!">Match</a></li>
           </ul>
         </div>
-      </nav>
-    </header>
-    <main class="container">
-      {{{ body }}}
-    </main>
+
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
   </body>
 </html>

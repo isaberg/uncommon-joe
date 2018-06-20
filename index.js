@@ -12,13 +12,13 @@ const moment = require('moment')
 const router = express.Router()
 
 // connected to mongoDB database hosted on mlab
-/*
-var mongoDB = process.env.MONGODB_URI || 'mongodb://isaberg:1234qwer!@#$QWER@ds263460.mlab.com:63460/joe'
+
+var mongoDB = process.env.MONGODB_URI || 'mongodb://isaberg:1234qwerQWER@ds263460.mlab.com:63460/joe'
 mongoose.connect(mongoDB)
 mongoose.Promise = global.Promise
 var db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
-*/
+
 app.use(express.static('public'))
 app.use(require("./routes/index.js"));
 
