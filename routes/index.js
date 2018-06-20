@@ -1,13 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-const applicationController = require('../controllers/application.js')
-
-router.get('/', applicationController.index)
-
-router.get('/', function (req, res, next) {
-  //applicationController.index where do I put this into play?
-  res.render('index', { title: 'Uncommon Joe' })
-})
+router.use('/', require('./application.js'))
+router.use('/match', require('./match.js'))
+router.use('/message', require('./message.js'))
+router.use('/org', require('./org.js'))
+router.use('/user', require('./user.js'))
 
 module.exports = router

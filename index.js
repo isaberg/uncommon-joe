@@ -11,29 +11,20 @@ const flash = require('connect-flash')
 const moment = require('moment')
 const router = express.Router()
 
-//routes required (later will be used by Express)
-var indexRouter = require('./routes/index.js')
-var matchRouter = require('./routes/match.js')
-var messageRouter = require('./routes/message.js')
-var orgRouter = require('./routes/org.js')
-var userRouter = require('./routes/user.js')
-
-
-// do the rest of the models
+// connected to mongoDB database hosted on mlab
+/*
+var mongoDB = process.env.MONGODB_URI || 'mongodb://isaberg:1234qwer!@#$QWER@ds263460.mlab.com:63460/joe'
+mongoose.connect(mongoDB)
+mongoose.Promise = global.Promise
+var db = mongoose.connection
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+*/
+app.use(express.static('public'))
+app.use(require("./routes/index.js"));
 
 app.set('view engine', 'hbs')
-
-app.use(express.static('public'))
-app.use('/', indexRouter)
-app.use('/match', matchRouter)
-app.use('/message', messageRouter)
-app.use('/org', orgRouter)
-app.use('/user', userRouter)
-
 app.set('port', process.env.PORT || 4000)
 
 app.listen(4000, () => {
-  console.log("success: app listening on port 4000")
+  console.log("success: index.js of Joe app listening on port 4000")
 })
-
-console.log('Hello world from index.js')
