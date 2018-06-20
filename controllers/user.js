@@ -1,19 +1,35 @@
-// All controller functions should be built in following manner:
-
-// first, define var itemName based on requiring model (Itemname.js)
-// that allows controller to reference the data when it runs
-// then exports.functionName defined for every HTTP request, each containing function (req,res) {
-// /////////this is what happens during the req-res cycle for this particular HTTP request
-// }
-
-// alternative: module.exports at the end
+var Match = require('../models/Match.js')
+var Message = require('../models/Message.js')
+var Org = require('../models/Org.js')
+var User = require('../models/User.js')
 
 
-// exports.index = function(req, res) {
-//    res.send('NOT IMPLEMENTED: Site Home Page');
+// GET @/user for index list of all
+exports.index = function (req, res) {
+  res.send('NOT IMPLEMENTED: generate index page')
+}
 
+// GET @/user/new for form to request new form
+exports.new = function (req, res) {
+  res.send('NOT IMPLEMENTED: generate form to create')
+}
 
-var Match = require('../models/Match.js');
-var Message = require('../models/Message.js');
-var Org = require('../models/Org.js');
-var User = require('../models/User.js');
+// POST @/user/new to post new request
+exports.newPost = function (req, res) {
+  res.send('NOT IMPLEMENTED: submit and post/create')
+}
+
+// GET @/user/delete to request delete form
+exports.delete = function (req, res) {
+  res.send('NOT IMPLEMENTED: request delete form')
+}
+
+// POST @/user/delete submit/post form to delete
+exports.deletePost = function (req, res) {
+  res.send('NOT IMPLEMENTED: submit/post form to delete')
+}
+
+// GET @/user/:id to request individual item detail by id
+exports.detail = function (req, res) {
+  res.send('NOT IMPLEMENTED: request individual item detail by id')
+}

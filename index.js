@@ -19,7 +19,9 @@ var db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.use(express.static('public'))
-app.use(require("./routes/index.js"));
+app.use(require("./routes/index.js"))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 app.set('view engine', 'hbs')
 

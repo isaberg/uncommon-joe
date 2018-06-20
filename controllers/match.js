@@ -1,19 +1,34 @@
-// All controller functions should be built in following manner:
+var Match = require('../models/Match.js')
+var Message = require('../models/Message.js')
+var Org = require('../models/Org.js')
+var User = require('../models/User.js')
 
-// first, define var itemName based on requiring model (Itemname.js)
-// that allows controller to reference the data when it runs
-// then exports.functionName defined for every HTTP request, each containing function (req,res) {
-// /////////this is what happens during the req-res cycle for this particular HTTP request
-// }
+// GET @/match for index list of all matches
+exports.index = function (req, res) {
+  res.send('NOT IMPLEMENTED: generate index list of all your matches')
+}
 
-// alternative: module.exports at the end
+// GET @/match/new for form to request match
+exports.new = function (req, res) {
+  res.send('NOT IMPLEMENTED: generate form to request match')
+}
 
+// POST @/match/new to post new match request
+exports.newPost = function (req, res) {
+  res.send('NOT IMPLEMENTED: post / submit new item')
+}
 
+// GET @/match/delete to request delete form
+exports.delete = function (req, res) {
+  res.send('NOT IMPLEMENTED: request deletion form')
+}
 
-// exports.index = function(req, res) {
-//    res.send('NOT IMPLEMENTED: Site Home Page');
+// POST @/match/delete form to delete
+exports.deletePost = function (req, res) {
+  res.send('NOT IMPLEMENTED: submit/post form to delete')
+}
 
-var Match = require('../models/Match.js');
-var Message = require('../models/Message.js');
-var Org = require('../models/Org.js');
-var User = require('../models/User.js');
+// GET @/match/:id to request match details
+exports.detail = function (req, res) {
+  res.send('NOT IMPLEMENTED: display match by id')
+}

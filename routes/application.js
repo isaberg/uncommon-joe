@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const applicationController = require('../controllers/application.js');
+const applicationController = require('../controllers/application.js')
 
 router.get('/', function (req, res, next) {
-  res.render('layout', { title: 'Uncommon Joe' })
+  res.render('app/index.hbs', { title: 'Uncommon Joe' })
 })
 
-module.exports = router;
+module.exports = router
