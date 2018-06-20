@@ -1,7 +1,10 @@
 {
   "name": "uncommon-joe",
   "version": "1.0.0",
-  "description": "good standards of documentation (i.e. explanations of the technologies used, the approach taken, features, installation instructions, unsolved problems, etc.)",
+  "engines": {
+    "node": "10.1.0"
+  },
+  "description": "connecting people across organization over coffee",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
