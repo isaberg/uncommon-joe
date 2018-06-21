@@ -9,18 +9,19 @@ const session = require('express-session')
 const moment = require('moment')
 const router = express.Router()
 // passport setup
-const passport = require('passport')
-require('./config/passport.js')(passport)
-app.use(flash())
-app.use(passport.initialize())
-app.use(passport.session())
+const passport = require('passport');
+
+require('./config/passport.js')(passport);
 app.use(
   session({
-    secret: "EXPRESS-IS-AWESOME",
+    secret: 'EXPRESS-IS-AWESOME',
     saveUninitialized: true,
     resave: false
   })
 )
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(flash())
 
 app.use(function (req, res, next) {
   res.locals.currentUser = req.user

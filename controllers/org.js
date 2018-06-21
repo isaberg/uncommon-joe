@@ -5,12 +5,12 @@ const passport = require('passport')
 
 // GET @/org for index list of all
 exports.index = function (req, res) {
-  Tweet.find({})
+  Org.find({})
     .sort({ createdAt: -1 })
     .limit(10)
-    .populate("author")
-    .then(tweets => {
-      res.render("app/index", { tweets });
+    .populate("orgName")
+    .then(orgs => {
+      res.render("app/index", { orgs });
     });
 }
 

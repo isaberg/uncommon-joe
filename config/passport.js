@@ -21,6 +21,8 @@ module.exports = function (passport) {
         passReqToCallback: true
       },
       function (req, email, password, callback) {
+        console.log('starting signup process')
+        console.log(req.body)
         User.findOne({ 'local.email': email })
           .then(user => {
             if (user) {
@@ -28,20 +30,22 @@ module.exports = function (passport) {
               return callback(
                 null,
                 false,
-                req.flash('signinMessage', 'this email is already taken')
+                req.flash('signupMessage', 'this email is already taken')
               )
             } else {
               console.log('USER IS UNIQUE, creating new user')
-              let newUser = User.create({
+              User.create({
                 email: email,
                 password: password,
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 zip: req.body.zip
-              })
-              newUser.save(err => {
-                if (err) throw err
-                return callback(null, newUser)
+              }).then(newUser => {
+                newUser.save(err => {
+                  if (err) throw err
+                  console.log('made new user')
+                  return callback(null, newUser)
+                })
               })
             }
           })
