@@ -1,3 +1,7 @@
+// Issues: Materialize / CSS / icon not loading in app (error: CastError)
+// Issues: referenceError: newSign is not defined
+// newSign
+
 var Match = require('../models/Match.js')
 var Org = require('../models/Org.js')
 var User = require('../models/User.js')
@@ -21,7 +25,7 @@ exports.postLog = function (req, res) {
     failureRedirect: '/user/signup',
     failureFlash: true
   })
-  return newLog(req, res)
+  return login(req, res)
 }
 
 // GET @/user/signup for form to request new form
@@ -31,12 +35,12 @@ exports.newSign = function (req, res) {
 
 // POST @/user/signup to create new user
 exports.postSign = function (req, res) {
-  const login = passport.authenticate('local-signup', {
+  const signup = passport.authenticate('local-signup', {
     successRedirect: '/user',
     failureRedirect: '/login',
     failureFlash: true
   })
-  return newSign(req, res)
+  return signup(req, res)
 }
 
 // GET @/user/delete to request delete form
