@@ -17,7 +17,7 @@ exports.newLog = function (req, res) {
 exports.postLog = function (req, res) {
   const login = passport.authenticate('local-login', {
     successRedirect: '/',
-    failureRedirect: '/login',
+    failureRedirect: '/user/login',
     failureFlash: true
   })
   return login(req, res)
@@ -32,7 +32,7 @@ exports.newSign = function (req, res) {
 exports.postSign = function (req, res) {
   const signupStrategy = passport.authenticate('local-signup', {
     successRedirect: '/',
-    failureRedirect: '/signup',
+    failureRedirect: '/user/signup',
     failureFlash: true
   })
   return signupStrategy(req, res)
