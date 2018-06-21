@@ -5,11 +5,20 @@ const bcrypt = require('bcrypt-nodejs')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const flash = require('connect-flash')
+const session = require('express-session')
 const moment = require('moment')
 const router = express.Router()
 // passport setup
 const passport = require('passport')
 require('./config/passport.js')(passport)
+app.use(flash())
+app.use(
+  session({
+    secret: "EXPRESS-IS-AWESOME",
+    saveUninitialized: true,
+    resave: false
+  })
+);
 app.use(passport.initialize())
 app.use(passport.session())
 

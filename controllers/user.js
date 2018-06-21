@@ -1,11 +1,11 @@
-// Issues: Materialize / CSS / icon not loading in app (error: CastError)
-// req.flash throws error...
+// Issues: Materialize / CSS / icon not loading in app once at /user/login level (/user index view does not throw error)
+// example from nodemon: CastError: Cast to ObjectId failed for value "coffee.png" at path "_id" for model "User"
+// req.flash throws error...even though commented out of passport...
 
 var Match = require('../models/Match.js')
 var Org = require('../models/Org.js')
 var User = require('../models/User.js')
 const passport = require('passport')
-
 
 // GET @/user for index list of all
 exports.index = function (req, res) {
@@ -14,11 +14,13 @@ exports.index = function (req, res) {
 
 // GET @/user/login for form to request new form
 exports.newLog = function (req, res) {
+  console.log('get /user/login sent')
   res.render('user/login.hbs', { message: 'Log in.' })
 }
 
 // POST @/user/login to login existing user
 exports.postLog = function (req, res) {
+  console.log('post /user/login form sent')
   const login = passport.authenticate('local-login', {
     successRedirect: '/user',
     failureRedirect: '/user/signup',
