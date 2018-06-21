@@ -14,16 +14,16 @@ exports.index = function (req, res) {
 exports.newLog = function (req, res) {
   res.render('user/login.hbs', { message: 'Log in.' })
 }
+
 // POST @/user/login to login existing user
 exports.postLog = function (req, res) {
-  const login = passport.authenticate("local-login", {
-    successRedirect: "/user",
-    failureRedirect: "/user/signup",
+  const login = passport.authenticate('local-login', {
+    successRedirect: '/user',
+    failureRedirect: '/user/signup',
     failureFlash: true
   })
   return newLog(req, res)
-},
-
+}
 
 // GET @/user/signup for form to request new form
 exports.newSign = function (req, res) {
@@ -32,13 +32,13 @@ exports.newSign = function (req, res) {
 
 // POST @/user/signup to create new user
 exports.postSign = function (req, res) {
-  const login = passport.authenticate("local-signup", {
-    successRedirect: "/user",
-    failureRedirect: "/login",
+  const login = passport.authenticate('local-signup', {
+    successRedirect: '/user',
+    failureRedirect: '/login',
     failureFlash: true
   })
   return newSign(req, res)
-},
+}
 
 // GET @/user/delete to request delete form
 exports.delete = function (req, res) {
@@ -53,10 +53,10 @@ exports.deletePost = function (req, res) {
 // GET @/user/:id to display individual user info (user logged in root)
 exports.detail = function (req, res) {
   User.findOne({ _id: req.params.id })
-  .populate('firstName')
-  .then(user => {
-    res.render("user/detail.hbs", { user });
-  })
+    .populate('firstName')
+    .then(user => {
+      res.render('user/detail.hbs', { user })
+    })
 }
 
 exports.logout = function (req,res) {
