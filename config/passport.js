@@ -30,7 +30,7 @@ module.exports = function (passport) {
               return callback(
                 null,
                 false,
-                req.flash('signupMessage', 'this email is already taken')
+              //   req.flash('signupMessage', 'this email is already taken')
               )
             } else {
               let newUser = new User()
@@ -67,14 +67,14 @@ module.exports = function (passport) {
             return callback(
               null,
               false,
-              req.flash('loginMessage', 'No user found')
+            //  req.flash('loginMessage', 'No user found')
             )
           }
           if (!user.validPassword(password)) {
             return callback(
               null,
               false,
-              req.flash('loginMessage', 'Ooops, wrong password')
+            //  req.flash('loginMessage', 'Ooops, wrong password')
             )
           }
           return callback(null, user)

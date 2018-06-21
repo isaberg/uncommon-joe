@@ -1,6 +1,5 @@
 // Issues: Materialize / CSS / icon not loading in app (error: CastError)
-// Issues: referenceError: newSign is not defined
-// newSign
+// req.flash throws error...
 
 var Match = require('../models/Match.js')
 var Org = require('../models/Org.js')
