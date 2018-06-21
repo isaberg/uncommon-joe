@@ -1,5 +1,4 @@
 var Match = require('../models/Match.js')
-var Message = require('../models/Message.js')
 var Org = require('../models/Org.js')
 var User = require('../models/User.js')
 const passport = require('passport')
