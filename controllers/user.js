@@ -15,13 +15,13 @@ exports.newLog = function (req, res) {
 
 // POST @/user/login to login existing user
 exports.postLog = function (req, res) {
+  console.log('POST USER LOGIN SUBMITTED')
   const login = passport.authenticate('local-login', {
     successRedirect: '/',
     failureRedirect: '/user/login',
     failureFlash: true
   })
   return login(req, res)
-  console.log('new login posted')
 }
 
 // GET @/user/signup for form to request new form
@@ -31,13 +31,13 @@ exports.newSign = function (req, res) {
 
 // POST @/user/signup to create new user
 exports.postSign = function (req, res) {
+  console.log('POST USER SIGNUP SUBMITTED')
   const signupStrategy = passport.authenticate('local-signup', {
     successRedirect: '/',
     failureRedirect: '/user/signup',
     failureFlash: true
   })
   return signupStrategy(req, res)
-  console.log('new signup posted')
 }
 
 // GET @/user/delete to request delete form

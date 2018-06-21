@@ -18,9 +18,6 @@ module.exports = function (passport) {
       {
         usernameField: 'email',
         passwordField: 'password',
-        firstNameField: 'firstName',
-        lastNameField: 'lastName',
-        zipField: 'zip',
         passReqToCallback: true
       },
       function (req, email, password, callback) {
@@ -32,14 +29,14 @@ module.exports = function (passport) {
                 false,
                 req.flash('signinMessage', 'this email is already taken')
               )
-            }
-            else {
+            } else {
+              console.log('user unique, creating new user')
               let newUser = new User()
               newUser.local.email = email
               newUser.local.password = newUser.encrypt(password)
-              newUser.local.firstName = firstName
-              newUser.local.lastName = lastName
-              newUser.local.zip = zip
+              newUser.local.firstName = req.body.firstName
+              newUser.local.lastName = req.body.lastName
+              newUser.local.zip = req.body.zip
 
               newUser.save(err => {
                 if (err) throw err
