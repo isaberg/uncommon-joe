@@ -30,7 +30,7 @@ module.exports = function (passport) {
               return callback(
                 null,
                 false,
-                req.flash('flashMessage', 'this email is already taken')
+                req.flash('signinMessage', 'this email is already taken')
               )
             }
             else {
@@ -68,14 +68,14 @@ module.exports = function (passport) {
             return callback(
               null,
               false,
-              req.flash('flashMessage', 'No user found')
+              req.flash('loginMessage', 'No user found')
             )
           }
           if (!user.validPassword(password)) {
             return callback(
               null,
               false,
-              req.flash('flashMessage', 'Ooops, wrong password')
+              req.flash('loginMessage', 'Ooops, wrong password')
             )
           }
           return callback(null, user)
