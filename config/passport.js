@@ -24,13 +24,14 @@ module.exports = function (passport) {
         User.findOne({ 'local.email': email })
           .then(user => {
             if (user) {
+              console.log('duplicate email found!')
               return callback(
                 null,
                 false,
                 req.flash('signinMessage', 'this email is already taken')
               )
             } else {
-              console.log('user unique, creating new user')
+              console.log('USER IS UNIQUE, creating new user')
               let newUser = new User()
               newUser.local.email = email
               newUser.local.password = newUser.encrypt(password)
