@@ -6,7 +6,7 @@ const passport = require('passport')
 
 // GET @/org for index list of all
 exports.index = function (req, res) {
-  res.send('NOT IMPLEMENTED: generate index page')
+  res.render('org/index.hbs')
 }
 
 // GET @/org/new for form to request new form

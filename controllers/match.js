@@ -6,7 +6,7 @@ const passport = require('passport')
 
 // GET @/match for index list of all matches
 exports.index = function (req, res) {
-  res.send('NOT IMPLEMENTED: generate index list of all your matches')
+  res.render('match/index.hbs')
 }
 
 // GET @/match/new for form to request match
