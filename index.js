@@ -12,18 +12,18 @@ const router = express.Router()
 const passport = require('passport')
 require('./config/passport.js')(passport)
 app.use(flash())
+app.use(passport.initialize())
+app.use(passport.session())
 app.use(
   session({
     secret: "EXPRESS-IS-AWESOME",
     saveUninitialized: true,
     resave: false
   })
-);
-app.use(passport.initialize())
-app.use(passport.session())
+)
 
 app.use(express.static('public'))
-app.use(require("./routes/index.js"))
+app.use(require('./routes/index.js'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
@@ -36,5 +36,5 @@ app.listen(app.get('port'), () => {
 })
 
 app.listen(4000, () => {
-  console.log("success: index.js of Joe app listening on port 4000")
+  console.log('success: index.js of Joe app listening on port 4000')
 })
