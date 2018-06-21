@@ -1,0 +1,32 @@
+<div class="container teal">
+  <div class="row">
+    <div class="col s12" style:"width:100%">
+      <h5 class="white-text">Create an Account</h5>
+
+      {{#if message}}
+        <p class="alert">{{message}}</p>
+      {{/if}}
+
+      <form action="" method="POST" class="auth-form">
+        <p class="input-field">
+          <input type="email" name="email" placeholder="Email">
+        </p>
+        <p class="input-field">
+          <input type="password" name="password" placeholder="Password">
+        </p>
+        <p class="input-field">
+          <input type="text" name="firstName" placeholder="First Name">
+        </p>
+        <p class="input-field">
+          <input type="text" name="lastName" placeholder="Last Name">
+        </p>
+        <p class="input-field">
+          <input type="text" name="zip" placeholder="ZIP code for home?">
+        </p>
+        <p class="input-field">
+          <input type="submit" value="Sign Up" class="btn waves-effect waves-light">
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

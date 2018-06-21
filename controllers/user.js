@@ -2,22 +2,43 @@ var Match = require('../models/Match.js')
 var Message = require('../models/Message.js')
 var Org = require('../models/Org.js')
 var User = require('../models/User.js')
+const passport = require('passport')
 
 
 // GET @/user for index list of all
 exports.index = function (req, res) {
-  res.send('NOT IMPLEMENTED: generate index page')
+  res.render('user/index.hbs')
 }
 
-// GET @/user/new for form to request new form
-exports.new = function (req, res) {
-  res.send('NOT IMPLEMENTED: generate form to create')
+// GET @/user/login for form to request new form
+exports.newLog = function (req, res) {
+  res.render('user/login.hbs', { message: 'Log in.' })
+}
+// POST @/user/login to login existing user
+exports.postLog = function (req, res) {
+  const login = passport.authenticate("local-login", {
+    successRedirect: "/user",
+    failureRedirect: "/user/signup",
+    failureFlash: true
+  })
+  return newLog(req, res)
+},
+
+
+// GET @/user/signup for form to request new form
+exports.newSign = function (req, res) {
+  res.render('user/signup.hbs', { message: 'Sign up.' })
 }
 
-// POST @/user/new to post new request
-exports.newPost = function (req, res) {
-  res.send('NOT IMPLEMENTED: submit and post/create')
-}
+// POST @/user/signup to create new user
+exports.postSign = function (req, res) {
+  const login = passport.authenticate("local-signup", {
+    successRedirect: "/user",
+    failureRedirect: "/login",
+    failureFlash: true
+  })
+  return newSign(req, res)
+},
 
 // GET @/user/delete to request delete form
 exports.delete = function (req, res) {
@@ -29,7 +50,16 @@ exports.deletePost = function (req, res) {
   res.send('NOT IMPLEMENTED: submit/post form to delete')
 }
 
-// GET @/user/:id to request individual item detail by id
+// GET @/user/:id to display individual user info (user logged in root)
 exports.detail = function (req, res) {
-  res.send('NOT IMPLEMENTED: request individual item detail by id')
+  User.findOne({ _id: req.params.id })
+  .populate('firstName')
+  .then(user => {
+    res.render("user/detail.hbs", { user });
+  })
+}
+
+exports.logout = function (req,res) {
+  req.logout()
+  res.redirect('/')
 }
