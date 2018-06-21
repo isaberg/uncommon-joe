@@ -15,7 +15,7 @@ exports.index = function (req, res) {
 // GET @/user/login for form to request new form
 exports.newLog = function (req, res) {
   console.log('get /user/login sent')
-  res.render('user/login.hbs', { message: 'Log in.' })
+  res.render('user/login.hbs', { message: req.flash('loginMessage') })
 }
 
 // POST @/user/login to login existing user
@@ -31,7 +31,7 @@ exports.postLog = function (req, res) {
 
 // GET @/user/signup for form to request new form
 exports.newSign = function (req, res) {
-  res.render('user/signup.hbs', { message: 'Sign up.' })
+  res.render('user/signup.hbs', { message: req.flash('signupMessage') })
 }
 
 // POST @/user/signup to create new user
