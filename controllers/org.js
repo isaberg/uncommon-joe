@@ -5,7 +5,13 @@ const passport = require('passport')
 
 // GET @/org for index list of all
 exports.index = function (req, res) {
-  res.render('org/index.hbs')
+  Tweet.find({})
+    .sort({ createdAt: -1 })
+    .limit(10)
+    .populate("author")
+    .then(tweets => {
+      res.render("app/index", { tweets });
+    });
 }
 
 // GET @/org/new for form to request new form
