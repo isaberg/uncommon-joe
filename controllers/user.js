@@ -21,6 +21,7 @@ exports.postLog = function (req, res) {
     failureFlash: true
   })
   return login(req, res)
+  console.log('new login posted')
 }
 
 // GET @/user/signup for form to request new form
@@ -36,6 +37,7 @@ exports.postSign = function (req, res) {
     failureFlash: true
   })
   return signupStrategy(req, res)
+  console.log('new signup posted')
 }
 
 // GET @/user/delete to request delete form

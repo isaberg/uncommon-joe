@@ -11,6 +11,7 @@ router.post('/signup', userController.postSign)
 router.get('/delete', userController.delete)
 router.post('/delete', userController.deletePost)
 router.get('/:id', userController.detail)
+router.get('/logout', userController.logout)
 // router.typeRequestHTTP('route/path', myController.myFunction);
 
 module.exports = router

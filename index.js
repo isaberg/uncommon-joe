@@ -22,6 +22,11 @@ app.use(
   })
 )
 
+app.use(function (req, res, next) {
+  res.locals.currentUser = req.user
+  next()
+})
+
 app.use(express.static('public'))
 app.use(require('./routes/index.js'))
 app.use(bodyParser.urlencoded({ extended: true }))

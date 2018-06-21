@@ -16,6 +16,12 @@
         <li><a href="/user">User</a></li>
         <li><a href="/org">Org</a></li>
         <li><a href="/match">Match</a></li>
+        {{#if currentUser}}
+          <li><a href="/logout">Logout {{currentUser.local.email}}</a></li>
+        {{else}}
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Signup</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
