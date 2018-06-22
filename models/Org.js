@@ -7,7 +7,7 @@ const Org = new Schema({
     email: {type: String, required: true, max: 100},
     password: {type: String, required: true, max: 100},
     orgName: {type: String, required: true, max: 100},
-    orgZip: {type: String, required: true, max: 100},
+    zipCode: {type: String, required: true, max: 100},
   },
   users: [
     {

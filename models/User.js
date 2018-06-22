@@ -8,7 +8,7 @@ const User = new Schema({
     password: {type: String, required: true, max: 100},
     firstName: {type: String, required: true, max: 100},
     lastName: {type: String, required: true, max: 100},
-    zip: {type: String, required: true, max: 10}
+    zipCode: {type: String, required: true, max: 10}
   },
   matches: [
     {

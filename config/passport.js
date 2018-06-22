@@ -39,6 +39,7 @@ module.exports = function (passport) {
               newUser.local.password = newUser.encrypt(password)
               newUser.local.firstName = req.body.firstName
               newUser.local.lastName = req.body.lastName
+              newUser.local.zipCode = req.body.zipCode
               newUser.save(err => {
                 if (err) throw err
                 return callback(null, newUser);

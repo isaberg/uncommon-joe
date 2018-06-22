@@ -12,7 +12,7 @@ User.find({}).remove(() => {
       password: createPassword('testpassword123'),
       firstName: 'Isaiah',
       lastName: 'Berg',
-      zip: '12345'
+      zipCode: '12345'
     }
   }).then((user) => {
     user.save(err => console.log(err))
@@ -24,7 +24,7 @@ User.find({}).remove(() => {
       password: createPassword('testpassword1234'),
       firstName: 'Nathan',
       lastName: 'Berg',
-      zip: '12345'
+      zipCode: '12345'
     }}).then((user) => {
     user.save(err => console.log(err))
   })
@@ -35,7 +35,7 @@ User.find({}).remove(() => {
       password: createPassword('testpassword1234'),
       firstName: 'Marta',
       lastName: 'Berg',
-      zip: '12345'
+      zipCode: '12345'
     }}).then((user) => {
     user.save(err => console.log(err))
   })
@@ -46,7 +46,7 @@ User.find({}).remove(() => {
       password: createPassword('testpassword1234'),
       firstName: 'David',
       lastName: 'Berg',
-      zip: '12345'
+      zipCode: '12345'
     }}).then((user) => {
     user.save(err => console.log(err))
   })
@@ -58,7 +58,7 @@ Org.find({}).remove(() => {
       email: 'generalassembly@email.com',
       password: createPassword('testpassword123'),
       orgName: 'General Assembly',
-      orgZip: '20005'
+      zipCode: '20005'
     }
   }).then((org) => {
     org.save(err => console.log(err))
@@ -69,7 +69,7 @@ Org.find({}).remove(() => {
       email: 'dctech@email.com',
       password: createPassword('testpassword1234'),
       orgName: 'DC Tech Meetup',
-      orgZip: '20005'
+      zipCode: '20005'
     }}).then((org) => {
     org.save(err => console.log(err))
   })

@@ -32,12 +32,12 @@ exports.newSign = function (req, res) {
 // POST @/user/signup to create new user
 exports.postSign = function (req, res) {
   console.log('POST USER SIGNUP SUBMITTED')
-  const signupStrategy = passport.authenticate('local-signup', {
+  const signup = passport.authenticate('local-signup', {
     successRedirect: '/',
     failureRedirect: '/user/',
     failureFlash: true
   })
-  return signupStrategy(req, res)
+  return signup(req, res)
 }
 
 // GET @/user/delete to request delete form
