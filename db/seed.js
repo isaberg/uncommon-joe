@@ -10,6 +10,7 @@ User.find({}).remove(() => {
     local: {
       email: 'isaiahberg@email.com',
       password: createPassword('testpassword123'),
+      orgName: 'General Assembly'
       firstName: 'Isaiah',
       lastName: 'Berg',
       zipCode: '12345'
@@ -22,6 +23,7 @@ User.find({}).remove(() => {
     local: {
       email: 'nathanberg@email.com',
       password: createPassword('testpassword1234'),
+      orgName: 'General Assembly'
       firstName: 'Nathan',
       lastName: 'Berg',
       zipCode: '12345'
@@ -33,6 +35,7 @@ User.find({}).remove(() => {
     local: {
       email: 'martaberg@email.com',
       password: createPassword('testpassword1234'),
+      orgName: 'General Assembly'
       firstName: 'Marta',
       lastName: 'Berg',
       zipCode: '12345'
@@ -44,6 +47,7 @@ User.find({}).remove(() => {
     local: {
       email: 'davidberg@email.com',
       password: createPassword('testpassword1234'),
+      orgName: 'General Assembly'
       firstName: 'David',
       lastName: 'Berg',
       zipCode: '12345'

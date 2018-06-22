@@ -2,8 +2,15 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
+        {{#if currentUser}}
+          <li>Hello {{currentUser.local.firstName}}! Welcome to {{currentUser.local.orgName}} on Uncommon Joe</li>
+          <li><a href="/match">Match</a> with others in your organization when you are ready!</li>
+          <li>Not {{currentUser.local.firstName}}? <a href="/logout">Logout here.</a></li>
+        {{else}}
         <h5 class="header col s12 light">Join organizations and match for a cup of Uncommon Joe.</h5>
         <h5 class="header col s12 light"><a href="/user/login">Log in</a> or sign up <a href="/user/signup">here</a>.</h5>
+        {{/if}}
+
       </div>
     </div>
   </div>
