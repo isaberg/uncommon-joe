@@ -1,4 +1,3 @@
-/*
 // FROM PASSPORT.JS
 else {
   console.log('USER IS UNIQUE, creating new user')
@@ -14,11 +13,11 @@ else {
     return callback(null, newUser)
   })
 }
-*/
 
 
 
-            /* //FROM passport.js 
+
+        //FROM passport.js
             {
               console.log('USER IS UNIQUE, creating new user')
               User.create({
@@ -35,4 +34,15 @@ else {
                 })
               })
             }
-            */
+
+
+
+// from user/signup.hbs
+
+
+        <p>
+          <input id="choice1" class="with-gap" name="orgName" type="radio" value:"General Assembly" checked />
+          <label for="choice1">General Assembly</label>
+          <input id="choice2" class="with-gap" name="orgName" type="radio" value:"DC Tech Meetup"/>
+          <label for="choice2">DC Tech Meetup</label>
+        </p>
