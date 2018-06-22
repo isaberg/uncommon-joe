@@ -19,7 +19,7 @@ exports.index = function (req, res) {
 }
 
 // POST @/match/index to drive match creation, followed by redirect to /match/index
-exports.matchPOST = function (req, res) {
+exports.matchPost = function (req, res) {
 
   /* // example tweet creation
     Tweet.create({
