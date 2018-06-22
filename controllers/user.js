@@ -17,8 +17,8 @@ exports.newLog = function (req, res) {
 exports.postLog = function (req, res) {
   console.log('POST USER LOGIN SUBMITTED')
   const login = passport.authenticate('local-login', {
-    successRedirect: '/',
-    failureRedirect: '/user/',
+    successRedirect: '/user',
+    failureRedirect: '/user/login',
     failureFlash: true
   })
   return login(req, res)
@@ -33,8 +33,8 @@ exports.newSign = function (req, res) {
 exports.postSign = function (req, res) {
   console.log('POST USER SIGNUP SUBMITTED')
   const signup = passport.authenticate('local-signup', {
-    successRedirect: '/',
-    failureRedirect: '/user/',
+    successRedirect: '/user',
+    failureRedirect: '/user/signup',
     failureFlash: true
   })
   return signup(req, res)
