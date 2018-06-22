@@ -19,7 +19,7 @@ const Match = new Schema({
     type: Date,
     default: Date.now()
   },
-  author: {
+  matchers: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
