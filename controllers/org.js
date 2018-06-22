@@ -10,7 +10,7 @@ exports.index = function (req, res) {
     .limit(10)
     .populate("orgName")
     .then(orgs => {
-      res.render("app/index", { orgs });
+      res.render("org/index", { orgs });
     });
 }
 
