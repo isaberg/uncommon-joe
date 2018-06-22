@@ -8,7 +8,7 @@ const passport = require('passport')
 // IF I POST @/MATCH... I WANT TO GENERATE A NEW MATCH AND REDIRECT TO THE SAME /MATCH PAGE, IN ONE VIEW
 // DISPLAY OF MATCH CARDS WITH MESSAGE FUNCTIONS IS CONDITIONED ON USER LOGIN
 exports.index = function (req, res) {
-  res.render('user/index.hbs')
+  res.render('match/index.hbs')
 }
 /*
 User.findOne({ _id: req.params.id })
@@ -21,6 +21,7 @@ User.findOne({ _id: req.params.id })
 */
 // POST @/match/index to drive match creation, followed by redirect to /match/index
 exports.matchPost = function (req, res) {
+  console.log('matchPost activated!')
   res.render('user/index.hbs')
 }
 /* // example tweet creation
@@ -37,6 +38,7 @@ exports.matchPost = function (req, res) {
 
 // PUT @/match/index/id to add messages, followed by redirect to /match/index
 exports.matchUpdate = function (req, res) {
+  console.log('matchUpdate activated!')
   res.render('user/index.hbs')
 }
 /* EXAMPLE TWEET UPDATE TO ADD COMMENTS
