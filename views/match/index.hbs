@@ -2,8 +2,13 @@
   <div class="section no-pad-bot">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">Uncommon Joe is connecting people every day.</h5>
-        <h5 class="header col s12 light">See the data <a href="#">here</a>.</h5>
+        {{#if currentUser}}
+          <li>Hello {{currentUser.local.firstName}}! Welcome to {{currentUser.local.orgName}} on Uncommon Joe</li>
+          <li>Click <button>Match</button> when you are ready!</li>
+        {{else}}
+        <h5 class="header col s12 light">Join organizations and match for a cup of Uncommon Joe.</h5>
+        <h5 class="header col s12 light"><a href="/user/login">Log in</a> or sign up <a href="/user/signup">here</a>.</h5>
+        {{/if}}
       </div>
     </div>
   </div>
