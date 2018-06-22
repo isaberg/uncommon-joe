@@ -8,20 +8,22 @@ const passport = require('passport')
 // IF I POST @/MATCH... I WANT TO GENERATE A NEW MATCH AND REDIRECT TO THE SAME /MATCH PAGE, IN ONE VIEW
 // DISPLAY OF MATCH CARDS WITH MESSAGE FUNCTIONS IS CONDITIONED ON USER LOGIN
 exports.index = function (req, res) {
-  /*User.findOne({ _id: req.params.id })
-    .populate({
-      path: 'matches',
-      options: { limit: 5, sort: { createdAt: -1 } }
-    })
-    .then(user => {*/
-      res.render('match/index.hbs', { match })
-    }//)
+  res.render('user/index.hbs')
 }
-
+/*
+User.findOne({ _id: req.params.id })
+  .populate({
+    path: 'matches',
+    options: { limit: 5, sort: { createdAt: -1 } }
+  })
+  .then(user => {}
+  }
+*/
 // POST @/match/index to drive match creation, followed by redirect to /match/index
 exports.matchPost = function (req, res) {
-
-  /* // example tweet creation
+  res.render('user/index.hbs')
+}
+/* // example tweet creation
     Tweet.create({
       content: req.body.tweet.content,
       author: req.user._id
@@ -32,12 +34,12 @@ exports.matchPost = function (req, res) {
       });
     });
   */ // example tweet creation function end
-  res.render('/')
-}
 
 // PUT @/match/index/id to add messages, followed by redirect to /match/index
 exports.matchUpdate = function (req, res) {
-  /* EXAMPLE TWEET UPDATE TO ADD COMMENTS
+  res.render('user/index.hbs')
+}
+/* EXAMPLE TWEET UPDATE TO ADD COMMENTS
   {
     let { content } = req.body;
     Tweet.findOne({ _id: req.params.id }).then(tweet => {
@@ -51,8 +53,6 @@ exports.matchUpdate = function (req, res) {
     });
   }
   */ // END OF EXAMPLE TWEET UPDATE ADD COMMENTS
-  res.render('/')
-}
 
 exports.requireAuth = function(req, res, next) {
   if (req.isAuthenticated()) {
