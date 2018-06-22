@@ -7,6 +7,23 @@
           <h4 class="header col s12 light">Hello {{currentUser.local.firstName}}! Welcome to {{currentUser.local.orgName}} on Uncommon Joe</h4>
           <h4 class="header col s12 light">Click <button class="btn waves-effect waves-light" type="submit" formmethod="POST" formaction="/match" name="matchCreate">Match
             <i class="material-icons right">assignment_ind</i></button> when you are ready!</h4>
+          <h4 class="header col s12 light">Your Matches</h4>
+          <br>
+          <section class="profile">
+            <h2>{{match.local.email}}</h2>
+            {{#if user.matches}}
+              <div class="">
+                {{#each match.matches}}
+                   {{> 'match'}}
+                {{/each}}
+              </div>
+            {{else}}
+              <p>No Matches yet!</p>
+            {{/if}}
+          </section>
+
+          {{ req.user.???listMatches???}}
+
         </ul>
         {{else}}
         <h4 class="header col s12 light">Join organizations and match for a cup of Uncommon Joe.</h4>

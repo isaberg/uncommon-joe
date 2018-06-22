@@ -4,8 +4,22 @@ var User = require('../models/User.js')
 const passport = require('passport')
 
 // GET @/match for index list of all matches
+// THIS IS MY MATCH INDEX PAGE WITH BUTTON
+// IF I POST @/MATCH... I WANT TO GENERATE A NEW MATCH AND REDIRECT TO THE SAME /MATCH PAGE, IN ONE VIEW
+// DISPLAY OF MATCH CARDS WITH MESSAGE FUNCTIONS IS CONDITIONED ON USER LOGIN
 exports.index = function (req, res) {
-  res.render('match/index.hbs')
+  User.findOne({email: currentUser.local.email})
+    .populate({
+      path: 'matches',
+      options: { limit: 5, sort: { createdAt: -1 } }
+    })
+    .then(user => {
+      res.render('match/index.hbs', { match })
+    })
+}
+
+exports.matchPOST = function (req, res) {
+
 }
 
 // GET @/match/new for form to request match
