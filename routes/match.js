@@ -5,7 +5,7 @@ const matchController = require('../controllers/match.js')
 
 //implemented
 router.get('/', matchController.requireAuth, matchController.index)
-router.post('/', matchController.requireAuth, matchController.matchPost)
+router.post('/index', matchController.requireAuth, matchController.matchPost)
 router.put('/:id', matchController.requireAuth, matchController.matchUpdate)
 
 //no functionality implemented yet

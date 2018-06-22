@@ -8,14 +8,14 @@ const passport = require('passport')
 // IF I POST @/MATCH... I WANT TO GENERATE A NEW MATCH AND REDIRECT TO THE SAME /MATCH PAGE, IN ONE VIEW
 // DISPLAY OF MATCH CARDS WITH MESSAGE FUNCTIONS IS CONDITIONED ON USER LOGIN
 exports.index = function (req, res) {
-  User.findOne({ _id: req.params.id })
+  /*User.findOne({ _id: req.params.id })
     .populate({
       path: 'matches',
       options: { limit: 5, sort: { createdAt: -1 } }
     })
-    .then(user => {
+    .then(user => {*/
       res.render('match/index.hbs', { match })
-    })
+    }//)
 }
 
 // POST @/match/index to drive match creation, followed by redirect to /match/index
