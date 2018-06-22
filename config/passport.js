@@ -37,6 +37,7 @@ module.exports = function (passport) {
               let newUser = new User()
               newUser.local.email = email
               newUser.local.password = newUser.encrypt(password)
+              newUser.local.orgName = req.body.orgName
               newUser.local.firstName = req.body.firstName
               newUser.local.lastName = req.body.lastName
               newUser.local.zipCode = req.body.zipCode
