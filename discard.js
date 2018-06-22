@@ -15,3 +15,24 @@ else {
   })
 }
 */
+
+
+
+            /* //FROM passport.js 
+            {
+              console.log('USER IS UNIQUE, creating new user')
+              User.create({
+                email: email,
+                password: password,
+                firstName: req.body.firstName,
+                lastName: req.body.lastName,
+                zip: req.body.zip
+              }).then(newUser => {
+                newUser.save(err => {
+                  if (err) throw err
+                  console.log('made new user')
+                  return callback(null, newUser)
+                })
+              })
+            }
+            */
